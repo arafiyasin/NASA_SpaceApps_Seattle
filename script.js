@@ -3,11 +3,9 @@ document.querySelectorAll('nav a').forEach(anchor => {
         e.preventDefault();
         
         const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
+        target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
     });
 });
