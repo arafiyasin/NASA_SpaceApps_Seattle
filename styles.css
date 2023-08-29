@@ -39,8 +39,9 @@ body {
     height: 20px;
     background-color: #fcb400;
     border-radius: 50%;
-    left: calc(50% - 10px);
-    top: calc(50% - 10px);
+    left: 50%; /* Center horizontally */
+    top: 50%; /* Center vertically */
+    transform: translate(-50%, -50%); /* Center the sun */
 }
 
 .info {
