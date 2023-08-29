@@ -1,5 +1,6 @@
 const slider = document.querySelector('.slider');
 const handle = document.querySelector('.handle');
+const sun = document.querySelector('.sun');
 const output = document.getElementById('output');
 
 let angle = 0; // Angle in degrees
@@ -18,15 +19,15 @@ function updateSliderPosition() {
 
 function dragSlider(event) {
     event.preventDefault();
-    
+
     const sliderRect = slider.getBoundingClientRect();
     const center = { x: sliderRect.left + sliderRect.width / 2, y: sliderRect.top + sliderRect.height / 2 };
-    
+
     const dx = event.clientX - center.x;
     const dy = event.clientY - center.y;
-    
+
     angle = (Math.atan2(dy, dx) * 180 / Math.PI) + 90;
-    
+
     updateSliderPosition();
 }
 
@@ -36,3 +37,6 @@ handle.addEventListener('mousedown', () => {
         document.removeEventListener('mousemove', dragSlider);
     });
 });
+
+// Initialize the slider position
+updateSliderPosition();
